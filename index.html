@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виберіть соцмережу</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            max-width: 300px;
+            margin: 10px;
+            padding: 15px;
+            font-size: 18px;
+            color: white;
+            background-color: #D42A2A;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #a02121;
+        }
+        .button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="LOGO.png" alt="Логотип">
+    <h1>Виберіть соціальну мережу</h1>
+    
+    <a class="button" href="fb://profile/61572375985463" onclick="redirect('fb://profile/61572375985463', 'https://www.facebook.com/profile.php?id=61572375985463')">
+        <img src="facebook-icon.png" alt="Facebook"> Facebook
+    </a>
+    <a class="button" href="instagram://user?username=valdi.europe" onclick="redirect('instagram://user?username=valdi.europe', 'https://www.instagram.com/valdi.europe')">
+        <img src="instagram-icon.png" alt="Instagram"> Instagram
+    </a>
+    
+    <script>
+        function redirect(appLink, webLink) {
+            window.location.href = appLink;
+            setTimeout(function() {
+                window.location.href = webLink;
+            }, 2000); // Через 2 сек, якщо не відкриється додаток, відкриється браузер
+        }
+    </script>
+</body>
+</html>
